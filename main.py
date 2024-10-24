@@ -2,8 +2,6 @@
 import requests, time, datetime, re, sys, os, json, random, math
 global skey,sckey,base_url,req_url,corpid,corpsecret,agentid,touser,toparty,totag,open_get_weather,area,qweather
 
-print(os.environ["CONFIG"])
-
 class MiMotion():
     name = "小米运动"
 
@@ -257,7 +255,10 @@ if __name__ == "__main__":
             _check_item = datas.get("MIMOTION", [])[i]
             #print(_check_item)
             msg += MiMotion(check_item=_check_item).main()
+            msg += os.environ["CONFIG"]
         print(msg)
+        print('1111')
+        print(os.environ["CONFIG"])
         # 酷推skey和server酱sckey和企业微信设置，只用填一个其它留空即可
         if datas.get("SKEY"):
             skey = datas.get("SKEY")
