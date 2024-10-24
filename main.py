@@ -2,6 +2,8 @@
 import requests, time, datetime, re, sys, os, json, random, math
 global skey,sckey,base_url,req_url,corpid,corpsecret,agentid,touser,toparty,totag,open_get_weather,area,qweather
 
+print(os.environ["CONFIG"])
+
 class MiMotion():
     name = "小米运动"
 
